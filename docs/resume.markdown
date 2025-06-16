@@ -13,4 +13,4 @@ This is a general resume not tailored towards a specific company.
   style="border: none;">
 </iframe>
 
-The repo can be found here: https://github.com/RowanTL/resume/
+The repo can be found here: [https://github.com/RowanTL/resume/](https://github.com/RowanTL/resume/)
