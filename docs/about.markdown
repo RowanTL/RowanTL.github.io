@@ -24,4 +24,4 @@ For fun I:
 - Use Desktop Linux (for five years)
 - Rock Climb
 - Read Books
-- De-Brainrotted (No Regular Youtube, Tiktok, Reels, Shorts, Reddit, ...)
+- De-Brainrotted (Tiktok, Reels, Shorts, Reddit, ...)
