@@ -21,7 +21,8 @@
 title: Rowan's Website
 email: rowan.a.tl@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This is a description (I can't think of anything I want to put here)
+  Please do not email me about my site ranking or how to make it better.
+  I will not respond to these!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rowantl.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
