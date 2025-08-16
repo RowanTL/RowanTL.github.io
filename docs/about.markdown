@@ -23,5 +23,4 @@ I've found enjoyment in many unique areas of Computer Science. For example, I've
 For fun I:
 - Use Desktop Linux (for five years)
 - Rock Climb
-- Read Books
 - De-Brainrotted (Tiktok, Reels, Shorts, Reddit, ...)
