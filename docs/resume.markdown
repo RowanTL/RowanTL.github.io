@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Resume
-permalink: /resume/
+permalink: /general-resume/
 ---
 
 This is a general resume not tailored towards a specific company.
