@@ -11,3 +11,6 @@ This is a general resume not tailored towards a specific company.
 </iframe>
 
 The repo can be found here: [https://github.com/RowanTL/resume/](https://github.com/RowanTL/resume/)
+
+Go to [https://brokenglass.dev/resume/](https://brokenglass.dev/resume/) to see the number of resumes
+I've created for my applications.
