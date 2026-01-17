@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="home">
+    <header class="post-header">
+        <h1 class="post-title">Home</h1>
+    </header>
+
+    <ul class="post-list" style="list-style: none; padding: 0">
+        {% assign proofs = site.proofs | default: "" %} {% assign posts =
+        site.posts %} {% assign all_content = posts | concat: proofs %} {%
+        assign sorted_content = all_content | sort: 'date' | reverse %} {% for
+        item in sorted_content %}
+        <li>
+            <span class="post-meta">{{ item.date | date: "%b %-d, %Y" }}</span>
+
+            {% if item.collection == 'proofs' %}
+            <span class="label-proof" style="font-weight: bold; color: #555"
+                >[Proof]</span
+            >
+            {% endif %}
+
+            <h3>
+                <a class="post-link" href="{{ item.url | relative_url }}">
+                    {{ item.title | escape }}
+                </a>
+            </h3>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
