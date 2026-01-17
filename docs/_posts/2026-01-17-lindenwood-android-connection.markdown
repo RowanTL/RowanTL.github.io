@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Lindenwood Android Network Connection"
-date:   2025-06-16
+date:   2026-01-17
 categories: lindenwood android
 ---
 
