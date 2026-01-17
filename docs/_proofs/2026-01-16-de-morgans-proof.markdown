@@ -87,7 +87,7 @@ $$
 
 ## Concluding Remarks
 
-This was a proof of both parts of De Morgan's Laws.
+This was a proof of both parts of De Morgan's Law.
 
 ## Extras
 
