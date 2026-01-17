@@ -32,3 +32,4 @@ it's better for it than just going). The car accomplished its goal of getting me
 point A to point B (Could this be a function? A car's function is getting the user
 from point A to point B).
 
+$x^2$
