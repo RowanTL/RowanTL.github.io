@@ -30,6 +30,9 @@ github_username: RowanTL
 
 # Build settings
 theme: minima
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
 plugins:
   - jekyll-feed
 
