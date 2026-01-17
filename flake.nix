@@ -21,6 +21,7 @@
           default = pkgs.mkShell {
             packages = [
               pkgs.jekyll
+              pkgs.bundler
             ];
 
             # Optional: Add a hook to print a message when entering the shell
