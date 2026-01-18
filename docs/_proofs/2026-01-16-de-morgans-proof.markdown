@@ -35,11 +35,11 @@ indexing set.
 
 ### Proving $X - \bigcup_{\alpha}U_{\alpha} = \bigcap_{\alpha}(X - U_{\alpha})$
 
-Suppose $x \in \bigcup_{\alpha}U_{\alpha}$. Therefore, $x \in X$ and $x \notin U_{\alpha}$ for
-at least one $\alpha$ by definition of the union. Because $x$ does not exist in every $U_{\alpha}$,
-it follows that the intersection of every $U_{\alpha}$ will not contain $x$. More formally,
-$x \in X$ and $x \notin \bigcap_{\alpha}U_\alpha$ for every $\alpha$. Finally, 
-$x \in \bigcap_{\alpha}(X - U_{\alpha})$.
+Suppose $x \in X - \bigcup_{\alpha}U_{\alpha}$. $x \in X$ and $x \notin U_\alpha$ for any $U_\alpha$
+by definition of the union. Because $x$ does not exist in any $U_\alpha$, we can write
+$(x \in X$ and $x \notin U_\alpha) $ and $ (x \in X$ and $x \notin U_\beta) $ and $ (x \in X$ and $x \notin U_\phi) $ and $...$ for
+some arbitrary values in the indexing set of $\alpha$. By definition of the intersection, can conclude $x \in \bigcap_{\alpha}(X - U_{\alpha})$.
+
 
 $$
 X - \bigcup_{\alpha}U_{\alpha} \subseteq \bigcap_{\alpha}(X - U_{\alpha})
@@ -62,9 +62,10 @@ $$
 
 ### Proving $X - \bigcap_{\alpha}U_{\alpha} = \bigcup_{\alpha}(X - U_{\alpha})$
 
-Suppose $x \in X - \bigcap_{\alpha}U_{\alpha}$. Then, $x \in X$ and $x \notin \bigcap_{\alpha}U_{\alpha}$
-for every $\alpha$. If $x \notin \bigcap_{\alpha}U_{\alpha}$ for every $\alpha$, then $x \notin \bigcup_{\alpha}
-U_{\alpha}$ for any $\alpha$. Thus $x \in \bigcup_{\alpha}(X - U_{\alpha})$.
+Suppose $x \in X - \bigcap_{\alpha}U_\alpha$. $x \in X$ and $x \notin U_{\alpha}$ for all $U_\alpha$ by the definition
+of the intersection. Because $x$ does not exist in all $U_\alpha$, we can write
+$(x \in X$ and $x \notin U_\alpha) $ or $ (x \in X$ and $x \notin U_\beta) $ or $ (x \in X$ and $x \notin U_\phi) $ or $...$ for
+some arbitrary values in the indexing set of $\alpha$. By definition of the intersection, can conclude $x \in \bigcup_{\alpha}(X - U_{\alpha})$.
 
 $$
 X - \bigcap_{\alpha}U_{\alpha} \subseteq \bigcup_{\alpha}(X - U_{\alpha})
