@@ -28,13 +28,29 @@ $$
 
 ## Proving $$\bigcap \{\mathcal{T}_\alpha\} \subset \mathcal{T}_{\mathcal{A}}$$
 
-Because $$\{\mathcal{T}_\alpha\}$$ contains all topologies on $X$ that contain $$\mathcal{A}$$, $$\mathcal{T}_\mathcal{A}
-\in \bigcap \{\mathcal{T}_\alpha\}$$. Because the union of the elements of $$\mathcal{A}$$ must be in every $\mathcal{T}_\alpha$,
-$$\mathcal{T}_\mathcal{A}$$ is the coarsest element. Thus, 
+Let $$U \in \bigcap \{\mathcal{T}_\alpha\}$$ for any $$U$$ in the intersection. Because $$\{\mathcal{T}_\alpha\}$$
+contains all topologies on $$X$$ that contain $$\mathcal{A}$$, $$\mathcal{T}_\mathcal{A} \in \{\mathcal{T}_\alpha\}$$.
+Because the union of the elements of $$\mathcal{A}$$ must be in every $$\mathcal{T}_\alpha$$, then $$\bigcap \mathcal{T}_\alpha$$
+must contain only the collection containing the union of the elements of $$\mathcal{A}$$. This is $$\mathcal{T}_\mathcal{A}$$.
+Thus,
 
 $$
-\bigcap \{\mathcal{T}_\alpha\} \subset \mathcal{T}_{\mathcal{A}}
+  U \in \mathcal{T}_\mathcal{A}
 $$
+
+Finally,
+
+$$
+\bigcap \{\mathcal{T}_\alpha\} \subset \mathcal{T}_{\mathcal{A}}  
+$$
+
+<!-- Because $$\{\mathcal{T}_\alpha\}$$ contains all topologies on $X$ that contain $$\mathcal{A}$$, $$\mathcal{T}_\mathcal{A} -->
+<!-- \in \bigcap \{\mathcal{T}_\alpha\}$$. Because the union of the elements of $$\mathcal{A}$$ must be in every $\mathcal{T}_\alpha$, -->
+<!-- $$\mathcal{T}_\mathcal{A}$$ is the coarsest element. Thus, --> 
+
+<!-- $$ -->
+<!-- \bigcap \{\mathcal{T}_\alpha\} \subset \mathcal{T}_{\mathcal{A}} -->
+<!-- $$ -->
 
 ## Conclusion of Basis Proof
 
