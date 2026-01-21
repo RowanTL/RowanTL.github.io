@@ -3,5 +3,23 @@ layout: post
 title: "Prob & Stat Lecture 4 Notes"
 date: 2026-01-21
 categories: math statistics
+math: true
 ---
 
+These are notes taken on Wednesday January 2026 in Dr. Golik's Probability and
+Statistics course.
+
+We talked about section 1.3 in the textbook, covering some set A given
+some other set B.
+
+$$
+  P(A | B) = \frac{P(A \cap B)}{P(B)}
+$$
+
+Is basically it.
+
+[link to raw pdf](https://raw.githubusercontent.com/RowanTL/RowanTL.github.io/7038500a16c55bd1a2ae4747f9088978c78cfe48/docs/assets/pdfs/mth_34100_prob_and_stat/1_3_conditional_probability.pdf)
+
+<iframe src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/RowanTL/RowanTL.github.io/7038500a16c55bd1a2ae4747f9088978c78cfe48/docs/assets/pdfs/mth_34100_prob_and_stat/1_3_conditional_probability.pdf&embedded=true" 
+        style="width:100%; height:600px;" frameborder="0">
+</iframe>
