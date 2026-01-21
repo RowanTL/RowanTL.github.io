@@ -1,0 +1,7 @@
+---
+layout: post
+title: "Prob & Stat Lecture 4 Notes"
+date: 2026-01-21
+categories: math statistics
+---
+
