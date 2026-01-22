@@ -41,6 +41,7 @@ Thus, $$\mathcal{K} \not \subset \mathcal{L}$$.
 Because these two topologies are not subsets of each other, they are not comparable.
 
 <!-- end of proof symbol -->
+
 $$\tag*{$\blacksquare$}$$
 
 ## Extras
