@@ -20,14 +20,14 @@ Which of these topologies contains the others?
 
 ## My Contains
 
-Blank spaces mean I don't think one topology contained the other.
+Blank spaces mean I didn't get to it.
 
-|                    | $$\mathcal{T}_1$$                       | $$\mathcal{T}_2$$                       | $$\mathcal{T}_3$$                       | $$\mathcal{T}_4$$                       | $$\mathcal{T}_5$$                        |
-| $$\mathcal{T}_1$$  | $$\mathcal{T}_1 \subset \mathcal{T}_1$$ |                                         |                                         |                                         |                                          |
-| $$\mathcal{T}_2$$  | $$\mathcal{T}_1 \subset \mathcal{T}_2$$ | $$\mathcal{T}_2 \subset \mathcal{T}_2$$ |                                         |                                         |                                          |
-| $$\mathcal{T}_3$$  |                                         |                                         | $$\mathcal{T}_3 \subset \mathcal{T}_3$$ |                                         |  $$\mathcal{T}_5 \subset \mathcal{T}_3$$ |
-| $$\mathcal{T}_4$$  | $$\mathcal{T}_1 \subset \mathcal{T}_4$$ |                                         |                                         | $$\mathcal{T}_4 \subset \mathcal{T}_4$$ |                                          |
-| $$\mathcal{T}_5$$  |                                         |                                         |                                         |                                         |  $$\mathcal{T}_5 \subset \mathcal{T}_5$$ |
+|                    | $$\mathcal{T}_1$$                       | $$\mathcal{T}_2$$                       | $$\mathcal{T}_3$$                       | $$\mathcal{T}_4$$                       | $$\mathcal{T}_5$$                       |
+| $$\mathcal{T}_1$$  | $$\mathcal{T}_1 \subset \mathcal{T}_1$$ |$$\mathcal{T}_2\not\subset\mathcal{T}_1$$|$$\mathcal{T}_3\not\subset\mathcal{T}_1$$|$$\mathcal{T}_4\not\subset\mathcal{T}_1$$|$$\mathcal{T}_5\not\subset\mathcal{T}_1$$|
+| $$\mathcal{T}_2$$  | $$\mathcal{T}_1 \subset \mathcal{T}_2$$ | $$\mathcal{T}_2 \subset \mathcal{T}_2$$ |                                         |$$\mathcal{T}_4\not\subset\mathcal{T}_2$$|                                         |
+| $$\mathcal{T}_3$$  | $$\mathcal{T}_1 \subset \mathcal{T}_3$$ |                                         | $$\mathcal{T}_3 \subset \mathcal{T}_3$$ |                                         | $$\mathcal{T}_5 \subset \mathcal{T}_3$$ |
+| $$\mathcal{T}_4$$  | $$\mathcal{T}_1 \subset \mathcal{T}_4$$ |$$\mathcal{T}_2\not\subset\mathcal{T}_4$$|                                         | $$\mathcal{T}_4 \subset \mathcal{T}_4$$ |                                         |
+| $$\mathcal{T}_5$$  | $$\mathcal{T}_1 \subset \mathcal{T}_5$$ |                                         |$$\mathcal{T}_3\not\subset\mathcal{T}_5$$|                                         | $$\mathcal{T}_5 \subset \mathcal{T}_5$$ |
 
 ## Extras
 
