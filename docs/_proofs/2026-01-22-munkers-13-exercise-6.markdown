@@ -2,7 +2,7 @@
 layout: post
 title: "Munkers Section 13 Exercise 6 Proof"
 math: true
-date: 2026-01-21
+date: 2026-01-22
 ---
 
 This is question 6 on page 83 in Chapter 13 of James R. Munkers' `Topology 2nd Edition` textbook.
