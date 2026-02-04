@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Munkers Section 16 Exercise 6 Proof"
+title: "Munkers Section 17 Theorem 17.3 Proof"
 math: true
 date: 2026-02-04
 ---
