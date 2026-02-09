@@ -23,6 +23,13 @@ Finally, because the infinite union of open sets are open, the closed set looks 
 
 ## (<=)
 
+The open set $$X - \bigtriangleup$$ contains every every point except those in which the elements are equal. We may denote subsets of
+$$X - \bigtriangleup$$ in the form of $$U \times V$$ in which $$U$$ and $$V$$ are open sets of X. Because any ordered pair of the same
+element can not be in any $$U$$ or $$V$$, the open sets $$U$$ and $$V$$ must not have any elements in common. Thus $$U \cap V = \emptyset$$.
+
+For any distinct pair of points $$x_1, x_2 \in X$$, it is possible to find a $$U$$ and $$V$$ that contain $$x_1$$ and $$x_2$$ respectively and
+hold the condition of $$U \cap V = \emptyset$$. Thus, $$X$$ is Hausdorff.      
+
 $$\tag*{$\blacksquare$}$$
 
 ## Extras
