@@ -10,12 +10,12 @@ This is question 3 on page 152 in Chapter 23 of James R. Munkers' `Topology 2nd 
 ## Question
 
 Let $${A_\alpha}$$ be a collection of connected subspaces of $$X$$; Let $$A$$ be a connected subspace of $$X$$. Show
-that if $$A \cap A_\alpha = \emptyset$$ for all $$\alpha$$, then $$A \cup (\cup A_\alpha)$$ is connected.
+that if $$A \cap A_\alpha = \emptyset$$ for all $$\alpha$$, then $$A \cup (\cup A_\alpha)$$ is connected. 
 
 ## Proof
 
 Suppose $$A \cap A_\alpha \ne \emptyset$$ for every $$\alpha$$. Thus $$\cup A_\alpha$$ and $$A$$ have some point in common.
-By Theorem 23.3, the collection of $$A$$ and $$\cup A_\alpha$$ must be connected.
+By Theorem 23.3, the collection of $$A$$ and $$\cup A_\alpha$$ must be connected. Thus $$A \cup (\cup A_\alpha)$$ is connected.
 
 ## Old Question
 
