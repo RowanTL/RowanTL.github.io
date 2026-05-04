@@ -61,8 +61,8 @@ In a provable form: If a graph $$G$$ is a directed graph with infinite nodes, th
 ## Proof of infinite DAG problem
 
 To prove the statement above, proceed by contradiction. Suppose $$G$$ is a DAG with infinite nodes. By definition of a
-DAG, there must be at least one sink node $$v_n \in V$$ of $$G$$ that has no children. Thus, the set of nodes
-$$V = \{v_1, ..., v_n\}$$ of $$G$$. Because there are a finite amount of nodes in $$V$$, we have reached a contradiction,
+DAG, there must be at least one sink node $$v_n \in V$$ of $$G$$ that has no children. Thus, the set of nodes of $$G$$
+is $$V = \{v_1, ..., v_n\}$$. Because there are a finite amount of nodes in $$V$$, we have reached a contradiction,
 proving that $$G$$ cannot be a DAG.
 
 <!-- end of proof symbol -->
