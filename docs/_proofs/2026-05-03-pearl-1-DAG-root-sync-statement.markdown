@@ -11,8 +11,6 @@ This is a proof of a statement on page 44 in Chapter 1.2.1 of Judea Pearl's `Cau
 
 Pearl claims that "Every DAG has at least one root and at least one sink." This requires a formal proof.
 
-Another assumption of the proof: There are only a finite amount of nodes in said DAG.
-
 ## Terminology to the question
 
 Given a graph $$G$$:
@@ -23,12 +21,18 @@ The set of all nodes of $$G$$ is named $$V$$. The set of all edges of $$G$$ is n
 
 A singular node may be described as $$v \in V$$. A singular edge may be described by $$(v, w) \in E$$ where $$w \in V$$.
 
+### Properties of a Directed Graph
+
+A directed graph may include directed cycles such as $$x \rightarrow y$$ and $$y \rightarrow x$$ but **not**
+$$x \rightarrow x$$.
+
 ## Proof
 
-To rephrase this claim, if a graph $$G$$ is a DAG, then there exists at least one root node and at least one sink node.
+To rephrase this claim, if a graph $$G$$ is a DAG with a finite amount of nodes, then there exists at least one root
+node and at least one sink node.
 
-The contrapositive of this statement is: If $$G$$ is some directed graph with no root or sink nodes, then $$G$$ is not
-a DAG.
+The contrapositive of this statement is: If $$G$$ is some directed graph with no root nodes, no sink nodes, and a finite
+amount of nodes, then $$G$$ is not a DAG.
 
 To begin this proof by contraposition, suppose $$G$$ is a directed graph with no root or sink nodes. Let $$v \in V$$
 represent a node of $$G$$. Because $$v$$ cannot be a root node, there must exist some node $$w \in V$$ such that $$w$$
