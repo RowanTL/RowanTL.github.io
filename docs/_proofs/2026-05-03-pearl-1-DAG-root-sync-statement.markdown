@@ -34,11 +34,11 @@ node and at least one sink node.
 The contrapositive of this statement is: If $$G$$ is some directed graph with no root nodes, no sink nodes, and a finite
 amount of nodes, then $$G$$ is not a DAG.
 
-To begin this proof by contraposition, suppose $$G$$ is a directed graph with no root or sink nodes. Let $$v \in V$$
-represent a node of $$G$$. Because $$v$$ cannot be a root node, there must exist some node $$w \in V$$ such that $$w$$
-is a parent of $$v$$ such that there exists some directed edge $$(w, v) \in E$$ from $$w$$ to $$v$$. Next,
-because $$v$$ cannot be a sink node, the node $$v$$ must have at least one child $$u \in V$$ such that there exists
-a directed edge $$(v, u) \in E$$ from $$v$$ to $$u$$.
+To begin this proof by contraposition, suppose $$G$$ is a directed graph with no root nodes, sink nodes, and has a finite
+amount of nodes. Let $$v \in V$$ represent a node of $$G$$. Because $$v$$ cannot be a root node, there must exist
+some node $$w \in V$$ such that $$w$$ is a parent of $$v$$ such that there exists some directed edge $$(w, v) \in E$$
+from $$w$$ to $$v$$. Next, because $$v$$ cannot be a sink node, the node $$v$$ must have at least one child $$u \in V$$
+such that there exists a directed edge $$(v, u) \in E$$ from $$v$$ to $$u$$.
 
 Finally, since the relationship described for $$v, w,$$ and $$u$$ in the previous paragraph holds for any node in $$G$$,
 the graph $$G$$ is not a DAG.
