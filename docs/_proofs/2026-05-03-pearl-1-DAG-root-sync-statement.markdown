@@ -43,8 +43,27 @@ a directed edge $$(v, u) \in E$$ from $$v$$ to $$u$$.
 Finally, since the relationship described for $$v, w,$$ and $$u$$ in the previous paragraph holds for any node in $$G$$,
 the graph $$G$$ is not a DAG.
 
-By proving the contrapositive of the original conditional, the statement if $$G$$ is a DAG, then there exists at
-least one root node and at least one sink node is true, concluding the proof.
+By proving the contrapositive of the original conditional, the statement: if $$G$$ is a DAG with a finite amount of nodes,
+then there exists at least one root node and at least one sink node is true, concluding the proof.
+
+<!-- end of proof symbol -->
+
+$$\tag*{$\blacksquare$}$$
+
+## Additional Question
+
+Can a directed graph with infinite nodes be a DAG? Rephrasing the question above, we get "Every DAG with infinite nodes
+has at least one root and at least one sink." This statement is believed to be false by the author; therefore, we seek
+to prove the statement "Every directed graph with infinite nodes is not a DAG."
+
+In a provable form: If a graph $$G$$ is a directed graph with infinite nodes, then $$G$$ is not a DAG.
+
+## Proof of infinite DAG problem
+
+To prove the statement above, proceed by contradiction. Suppose $$G$$ is a DAG with infinite nodes. By definition of a
+DAG, there must be at least one sink node $$v_n \in V$$ of $$G$$ that has no children. Thus, the set of nodes
+$$V = \{v_1, ..., v_n\}$$ of $$G$$. Because there are a finite amount of nodes in $$V$$, we have reached a contradiction,
+proving that $$G$$ cannot be a DAG.
 
 <!-- end of proof symbol -->
 
