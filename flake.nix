@@ -1,35 +1,27 @@
 {
-  description = "A simple environment with Zola";
+  description = "A multi-system dev environment for Antora";
 
   inputs = {
-    # You can pin this to a specific commit or tag if needed
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs }:
-    let
-      # Helper to support multiple systems (Linux, Mac, M1 Mac, etc.)
-      systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-      forAllSystems = nixpkgs.lib.genAttrs systems;
-    in
-    {
-      devShells = forAllSystems (system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
-          default = pkgs.mkShell {
-            packages = [
-              pkgs.jekyll
-              pkgs.bundler
-            ];
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          packages = with pkgs; [
+            antora
+          ];
 
-            # Optional: Add a hook to print a message when entering the shell
-            shellHook = ''
-              echo "Welcome to the Jekyll environment!"
-              echo "jekyll version: $(jekyll --version)"
-            '';
-          };
-        });
-    };
+          shellHook = ''
+            echo "Entered Antora Environment"
+            antora -v
+          '';
+        };
+      }
+    );
 }
