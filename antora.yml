@@ -1,0 +1,7 @@
+name: rowans-website
+version: ~
+title: Rowan's Website
+nav:
+  - modules/ROOT/nav.adoc
+  - modules/docs/nav.adoc
+  - modules/proofs/nav.adoc
