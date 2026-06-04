@@ -36,16 +36,23 @@ The contrapositive of the conditional above is: If $$D$$ is a subspace of $$C$$ 
 then $$D$$ has a separation. We will prove the contrapositive.
 
 To begin, suppose $$D$$ is a subspace of $$C$$ with two or more elements. Next, take any interval
-$$Y = (a, c) \subset [0, 1]$$ and $$U$$ being some open set of $$C$$. The subspace $$D$$ may be described
+$$(a, c) \subset [0, 1]$$ and $$U$$ being some open set of $$C$$. The subspace $$D$$ may be described
 as
 
 $$
-  D = U \cap Y
+  D = U \cap (a, c)
 $$
 
-Now, since $$D$$ has more than one element, take distinct elements $$x, y \in D$$ where $$x$$ is the smaller
-element of the two and $$y$$ is the larger of the two. Then, select a $$b \in [0, 1] - C$$ such that
-$$a < b < c$$.
+Now, since $$D$$ has more than one element, take distinct elements $$x, y \in D$$ in which $$x < y$$.
+<!-- Then, select some $$b \in [0, 1] - C$$ such that $$a < b < c$$. -->
+
+To show we may find two disjoint sets whose union is $$D$$, it suffices to show there exists some $$b \in (a, c)$$
+such that $$b \notin C$$. Because $$(a, c)$$ is a fixed interval, there exists some $$n \in \mathbb{N}$$ such
+that some $$I \subset A_n$$ is fully contained within $$(a, c)$$, that is $$I \subset (a, c)$$. Next, take
+$$A_{n+1}$$. By definition of the Cantor Set, the "middle thirds" of $$I$$ are intersected out. These
+"middle thirds" contain points within $$(a, c)$$ and not within $$C$$. Take some $$b$$ from a
+"middle third" to satisfy the condition imposed in the first sentence of this paragraph.
+
 
 Because $$x, y$$ are distinct, we find two open, disjoint sets $$X = (a, b) \cap U$$ and $$Y = (b, c) \cap U$$
 where $$X \cup Y = D$$. Thus, proving the contraposition, completing part a.
