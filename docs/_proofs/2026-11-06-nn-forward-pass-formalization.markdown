@@ -15,14 +15,14 @@ A formalization of a neural network's forward pass.
 Let $$\mathbb{F} \subset \mathbb{Q}$$ be a finite set containing all 64-bit floating point values.
 Let $$k \in \mathbb{Z}_+$$ and $$n_1, n_2, ..., n_k \in \mathbb{Z}_+$$.
 
-For some $$p, q \in \mathbb{Z}_+$$, let $$\mathbb{F}^{p \times q}$$ denote the set of a all matrices
+For some $$p, q \in \mathbb{Z}_+$$, let $$\mathbb{F}^{p \times q}$$ denote the set of all matrices
 with $$p$$ rows and $$q$$ columns. Specifically, a column vector with $$p$$ rows is denoted as
 $$\mathbb{F}^p$$.
 
 Next, a neural network is a function:
 
 $$
-  f: \mathbb{F}^{n_1} \rightarrow \mathbb{F}^{n_k}
+  \mathbb{f}: \mathbb{F}^{n_1} \rightarrow \mathbb{F}^{n_k}
 $$
 
 Now for a little more notation that ties into the neural network later.
@@ -95,7 +95,7 @@ $$
 Now, hook this into the original neural network function
 
 $$
-  f = f_{k-1} \circ f_{k-2} \circ \cdots \circ f_{1}
+  \mathbb{f} = f_{k-1} \circ f_{k-2} \circ \cdots \circ f_{1}
 $$
 
 This should be the forward pass of a neural network formalized.
