@@ -29,12 +29,12 @@ Now for a little more notation that ties into the neural network later.
 
 Let $$\mathcal{F} = \{f \mid f: \mathbb{F}^p \rightarrow \mathbb{F}^q$$ for all $$p, q \in \mathbb{Z}_+ \}$$
 
-### Dense Layer Function Definition
+### Dense (Affine) Layer Definition
 
 For some $$p, q \in \mathbb{Z}_+$$, define a dense layer function, $$\ell_d \in \mathcal{F}$$ such that
 
 $$
-  \ell_d: \mathbb{F}^p \rightarrow \mathbb{F}^q
+  \ell_d: \mathbb{F}^q \rightarrow \mathbb{F}^p
 $$
 
 To describe the transformation to an input vector, we need to define a few variables.
