@@ -17,24 +17,24 @@ Let $$k \in \mathbb{Z}_+$$ and $$n_1, n_2, ..., n_k \in \mathbb{Z}_+$$.
 
 For some $$p, q \in \mathbb{Z}_+$$, let $$\mathbb{F}^{p \times q}$$ denote the set of all matrices
 with $$p$$ rows and $$q$$ columns. Specifically, a column vector with $$p$$ rows is denoted as
-$$\mathbb{F}^p$$.
+$$\mathbb{F}^{p \times 1}$$.
 
 Next, a neural network is a function:
 
 $$
-  \mathbb{f}: \mathbb{F}^{n_1} \rightarrow \mathbb{F}^{n_k}
+  \mathbb{f}: \mathbb{F}^{n_1 \times 1} \rightarrow \mathbb{F}^{n_k \times 1}
 $$
 
 Now for a little more notation that ties into the neural network later.
 
-Let $$\mathcal{F} = \{f \mid f: \mathbb{F}^p \rightarrow \mathbb{F}^q$$ for all $$p, q \in \mathbb{Z}_+ \}$$
+Let $$\mathcal{F} = \{f: \mathbb{F}^p \rightarrow \mathbb{F}^q \mid p, q \in \mathbb{Z}_+ \}$$
 
 ### Dense (Affine) Layer Definition
 
 For some $$p, q \in \mathbb{Z}_+$$, define a dense layer function, $$\ell_d \in \mathcal{F}$$ such that
 
 $$
-  \ell_d: \mathbb{F}^q \rightarrow \mathbb{F}^p
+  \ell_d: \mathbb{F}^{q \times 1} \rightarrow \mathbb{F}^{p \times 1}
 $$
 
 To describe the transformation to an input vector, we need to define a few variables.
@@ -42,8 +42,8 @@ To describe the transformation to an input vector, we need to define a few varia
 $$
 \begin{aligned}
   W &\in \mathbb{F}^{p \times q} \\
-  X &\in \mathbb{F}^q \\
-  B &\in \mathbb{F}^p
+  X &\in \mathbb{F}^{q \times 1} \\
+  B &\in \mathbb{F}^{p \times 1}
 \end{aligned}
 $$
 
@@ -58,7 +58,7 @@ $$
 For some $$p \in \mathbb{Z}_+$$, define an activation layer function, $$\ell_a \in \mathcal{F}$$ such that
 
 $$
-  \ell_a: \mathbb{F}^p \rightarrow \mathbb{F}^p
+  \ell_a: \mathbb{F}^{p \times 1} \rightarrow \mathbb{F}^{p \times 1}
 $$
 
 applies some first order differentiable function $$g: \mathbb{F} \rightarrow \mathbb{F}$$ to each
@@ -67,7 +67,7 @@ element of an input vector.
 To visualize, let
 
 $$
-  X = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_p \end{bmatrix} \in \mathbb{F}^p
+  X = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_p \end{bmatrix} \in \mathbb{F}^{p \times 1}
 $$
 
 then,
@@ -85,10 +85,10 @@ Next, let $$f_1, f_2, ..., f_{k-1} \in L$$ such that
 
 $$
 \begin{aligned}
-  &f_1 : \mathbb{F}^{n_1} \rightarrow \mathbb{F}^{n_2} \\
-  &f_2 : \mathbb{F}^{n_2} \rightarrow \mathbb{F}^{n_3} \\
+  &f_1 : \mathbb{F}^{n_1 \times 1} \rightarrow \mathbb{F}^{n_2 \times 1} \\
+  &f_2 : \mathbb{F}^{n_2 \times 1} \rightarrow \mathbb{F}^{n_3 \times 1} \\
   &\vdots \\
-  &f_{k-1} : \mathbb{F}^{n_{k-1}} \rightarrow \mathbb{F}^{n_k}
+  &f_{k-1} : \mathbb{F}^{n_{k-1} \times 1} \rightarrow \mathbb{F}^{n_k \times 1}
 \end{aligned}
 $$
 
