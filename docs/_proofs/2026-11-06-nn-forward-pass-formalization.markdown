@@ -15,8 +15,8 @@ A formalization of a neural network's forward pass.
 Let $$\mathbb{F} \subset \mathbb{Q}$$ be a finite set containing all 64-bit floating point values.
 Let $$k \in \mathbb{Z}_+$$ and $$n_1, n_2, ..., n_k \in \mathbb{Z}_+$$.
 
-For some $$p, q \in \mathbb{Z}_+$$, let $$\mathbb{F}^{p \times q}$$ denote the set of all matrices
-with $$p$$ rows and $$q$$ columns. Specifically, a column vector with $$p$$ rows is denoted as
+Given some $$p, q \in \mathbb{Z}_+$$, let $$\mathbb{F}^{p \times q}$$ denote the set of all matrices
+with $$p$$ rows and $$q$$ columns and entries in $$\mathbb{F}$$. Specifically, a column vector with $$p$$ rows is denoted as
 $$\mathbb{F}^{p \times 1}$$.
 
 Next, a neural network is a function:
@@ -27,7 +27,7 @@ $$
 
 Now for a little more notation that ties into the neural network later.
 
-Let $$\mathcal{F} = \{f: \mathbb{F}^p \rightarrow \mathbb{F}^q \mid p, q \in \mathbb{Z}_+ \}$$
+Let $$\mathcal{F} = \{f: \mathbb{F}^{p \times 1} \rightarrow \mathbb{F}^{q \times 1} \mid p, q \in \mathbb{Z}_+ \}$$
 
 ### Dense (Affine) Layer Definition
 
@@ -55,13 +55,15 @@ $$
 
 ### Activation Layer Definition
 
-For some $$p \in \mathbb{Z}_+$$, define an activation layer function, $$\ell_a \in \mathcal{F}$$ such that
+Take some differentiable function $$g: \mathbb{R} \rightarrow \mathbb{R}$$.
+
+Next, for some $$p \in \mathbb{Z}_+$$, define an activation layer function, $$\ell_a \in \mathcal{F}$$ such that
 
 $$
   \ell_a: \mathbb{F}^{p \times 1} \rightarrow \mathbb{F}^{p \times 1}
 $$
 
-applies some first order differentiable function $$g: \mathbb{F} \rightarrow \mathbb{F}$$ to each
+applies the function $$g|_{\mathbb{F}}: \mathbb{F} \rightarrow \mathbb{F}$$, the restriction of $$g$$ to $$\mathbb{F}$$, to each
 element of an input vector.
 
 To visualize, let
@@ -74,12 +76,12 @@ then,
 
 $$
   \ell_a(X) = \ell_a\left(\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_p \end{bmatrix}\right)
-  = \begin{bmatrix} g(x_1) \\ g(x_2) \\ \vdots \\ g(x_p) \end{bmatrix}
+  = \begin{bmatrix} g|_{\mathbb{F}}(x_1) \\ g|_{\mathbb{F}}(x_2) \\ \vdots \\ g|_{\mathbb{F}}(x_p) \end{bmatrix}
 $$
 
 ### Final Pieces
 
-Let $$L = \{f \in \mathcal{F} \mid f$$ is a dense or activation layer function $$\}$$ be a subset of $$\mathcal{F}$$.
+Let $$L = \{f \in \mathcal{F} \mid f$$ is a dense or activation layer function $$\} \subset \mathcal{F}$$.
 
 Next, let $$f_1, f_2, ..., f_{k-1} \in L$$ such that 
 
