@@ -17,22 +17,22 @@ Let $$\mathbb{F} \subset \mathbb{Q}$$ be a finite set containing all 64-bit floa
 Let $$k \in \mathbb{Z}_+$$ and $$n_1, n_2, ..., n_k \in \mathbb{Z}_+$$.
 
 For some $$p, q \in \mathbb{Z}_+$$, let $$\mathbb{F}^{p \times q}$$ denote the set of all matrices
-with $$p$$ rows and $$q$$ columns. Specifically, a column vector with $$p$$ rows is denoted as
-$$\mathbb{F}^p$$.
+with $$p$$ rows and $$q$$ columns and entries in $$\mathbb{F}$$. Specifically, a column vector with $$p$$ rows is denoted as
+$$\mathbb{F}^{p \times 1}$$.
 
-Let $$\mathcal{F} = \{f \mid f: \mathbb{F}^p \rightarrow \mathbb{F}^q$$ for all $$p, q \in \mathbb{Z}_+ \}$$
+Let $$\mathcal{F} = \{f: \mathbb{F}^{p \times 1} \rightarrow \mathbb{F}^{q \times 1} \mid p, q \in \mathbb{Z}_+ \}$$
 
 ## Formalization
 
 The backwards pass of a neural network is:
 
 $$
-  \mathbb{f}^{-1}: \mathbb{F}^{n_k} \rightarrow \mathbb{F}^{n_1}
+  \mathbb{f}^{-1}: \mathbb{F}^{n_k \times 1} \rightarrow \mathbb{F}^{n_1 \times 1}
 $$
 
 ### Layer Linear Systems of Equations
 
-Starting with some dense layer in a neural network, $$\ell_{d} : \mathbb{F}^q \rightarrow \mathbb{F}^p$$, we have
+Starting with some dense layer in a neural network, $$\ell_{d} : \mathbb{F}^{q \times 1} \rightarrow \mathbb{F}^{p \times 1}$$, we have
 
 $$
   \ell_d(X) = WX + B
@@ -43,8 +43,8 @@ where
 $$
 \begin{aligned}
   W &\in \mathbb{F}^{p \times q} \\
-  X &\in \mathbb{F}^q \\
-  B &\in \mathbb{F}^p
+  X &\in \mathbb{F}^{q \times 1} \\
+  B &\in \mathbb{F}^{p \times 1}
 \end{aligned}
 $$
 
@@ -71,7 +71,7 @@ $$
     w_{21} x_1 + w_{22} x_2 + \cdots + w_{2q} x_q \\
     \vdots \\
     w_{p1} x_1 + w_{p2} x_2 + \cdots + w_{pq} x_q
-  \end{bmatrix} \in \mathbb{F}^p
+  \end{bmatrix} \in \mathbb{F}^{p \times 1}
 $$
 
 and
@@ -82,10 +82,10 @@ $$
     w_{21} x_1 + w_{22} x_2 + \cdots + w_{2q} x_q + b_2 \\
     \vdots \\
     w_{p1} x_1 + w_{p2} x_2 + \cdots + w_{pq} x_q + b_p
-  \end{bmatrix} \in \mathbb{F}^p
+  \end{bmatrix} \in \mathbb{F}^{p \times 1}
 $$
 
-Now, for some $$Y \in \mathbb{F}^p$$, we have $$Y = WX + B$$ and get the following system of linear equations for a given dense layer:
+Now, for some $$Y \in \mathbb{F}^{p \times 1}$$, we have $$Y = WX + B$$ and get the following system of linear equations for a given dense layer:
 
 $$
 \begin{aligned}
@@ -96,7 +96,7 @@ $$
 \end{aligned}
 $$
 
-A similar argument can be made for an activation layer $$\ell_a: \mathbb{F}^p \rightarrow \mathbb{F}^p$$.
+A similar argument can be made for an activation layer, $$\ell_a: \mathbb{F}^{p \times 1} \rightarrow \mathbb{F}^{p \times 1}$$.
 
 $$
 \begin{aligned}
@@ -114,15 +114,14 @@ Rewriting the layers as above is helpful in the next section.
 From the forward pass section, a neural network is defined as:
 
 $$
-  \mathbb{f}: \mathbb{F}^{n_1} \rightarrow \mathbb{F}^{n_k}
+  \mathbb{f}: \mathbb{F}^{n_1 \times 1} \rightarrow \mathbb{F}^{n_k \times 1}
 $$
 
-Take $$X \in \mathbb{F}^{n_1}$$ and $$Z \in \mathbb{F}^{n_k}$$ such that $$Z = \mathbb{f}(X)$$. Also,
-let $$\mathbb{F}_{0+} \subset \mathbb{F}$$ represent the set of all nonnegative floating point values.
+Take $$X \in \mathbb{F}^{n_1 \times 1}$$ and $$Z \in \mathbb{F}^{n_k \times 1}$$ such that $$Z = \mathbb{f}(X)$$.
 
-Next, for some $$p \in \mathbb{Z}_+$$, let $$\mathbb{e} : \mathbb{F}^{p} \rightarrow \mathbb{F}_{0+}$$ such that
-a first order partial derivative exists for each $$x_i \in \mathbb{F}^p$$ where $$1 \le i \le p$$. For
-the case where $$\mathbb{e} : \mathbb{F}^{n_k} \rightarrow \mathbb{F}_{0+}$$, compute $$\mathbb{e}(Z) = e$$
+Next, for some $$p \in \mathbb{Z}_+$$, let $$\mathbb{e} : \mathbb{F}^{p \times 1} \rightarrow [0, \infty) \cap \mathbb{F}$$ such that
+partial derivatives exist for each $$x_i \in \mathbb{F}^{p \times 1}$$ where $$1 \le i \le p$$. For
+the case where $$\mathbb{e} : \mathbb{F}^{n_k \times 1} \rightarrow [0, \infty) \cap \mathbb{F}$$, compute $$\mathbb{e}(Z) = e$$
 to obtain the error of the neural network.
 
 Finally, for each $$1 \le c \le k-1$$, define the gradient of the error, $$f_c$$,
@@ -134,15 +133,26 @@ $$
   \frac{\partial e}{\partial y_2} \\
   \vdots \\
   \frac{\partial e}{\partial y_{n_c}}
-  \end{bmatrix} \in \mathbb{F}^{n_c}
+  \end{bmatrix} \in \mathbb{F}^{n_c \times 1}
 $$
+
+## Backwards Function
+
+Denote
+
+$$
+  \mathbb{f}^{-1}: \mathbb{F}^{n_k \times 1} \rightarrow \mathbb{F}^{n_1 \times 1}
+$$
+
+to be the backwards pass of a neural network. The final definition of the backwards pass is given
+after the mandatory building blocks are presented.
 
 ### Backwards Dense Layer Function
 
 To update the gradients so our network can truly learn, we need to pass the error back down the layers of the network.
 
 For some $$p, q \in \mathbb{Z}_+$$, for each $$1 \le r \le p$$, and for each $$1 \le s \le q$$,
-define a backwards dense layer function $$\ell_d^{-1} : \mathbb{F}^p \rightarrow \mathbb{F}^q \in \mathcal{F}$$ by
+define a backwards dense layer function $$\ell_d^{-1} : \mathbb{F}^{p \times 1} \rightarrow \mathbb{F}^{q \times 1} \in \mathcal{F}$$ by
 
 $$
   \ell_d^{-1}(\frac{\partial e}{\partial f_c}) = \frac{\partial e}{\partial X}
@@ -156,7 +166,7 @@ $$
     \frac{\partial e}{\partial x_2} \\
     \vdots \\
     \frac{\partial e}{\partial x_q}
-  \end{bmatrix} \in \mathbb{F}^q
+  \end{bmatrix} \in \mathbb{F}^{q \times 1}
 $$
 
 We get $$\frac{\partial e}{\partial x_s}$$ by using the chain rule and in its Leibniz's notation.
@@ -326,11 +336,11 @@ Recall from the forward pass:
 
 For some $$p \in \mathbb{Z}_+$$, define an activation layer function, $$\ell_a \in \mathcal{F}$$ such that
 $$
-  \ell_a: \mathbb{F}^p \rightarrow \mathbb{F}^p
+  \ell_a: \mathbb{F}^{p \times 1} \rightarrow \mathbb{F}^{p \times 1}
 $$
 
 $$
-  X = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_p \end{bmatrix} \in \mathbb{F}^p
+  X = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_p \end{bmatrix} \in \mathbb{F}^{p \times 1}
 $$
 
 and
@@ -382,10 +392,10 @@ Next, let $$f^{-1}_1, f^{-1}_2, ..., f^{-1}_{k-1} \in L^{-1}$$ such that
 
 $$
 \begin{aligned}
-  &f^{-1}_{k-1} : \mathbb{F}^{n_{k-1}} \rightarrow \mathbb{F}^{n_{k-2}} \\
-  &f^{-1}_{k-2} : \mathbb{F}^{n_{k-2}} \rightarrow \mathbb{F}^{n_{k-3}} \\
+  &f^{-1}_{k-1} : \mathbb{F}^{n_{k-1} \times 1} \rightarrow \mathbb{F}^{n_{k-2} \times 1} \\
+  &f^{-1}_{k-2} : \mathbb{F}^{n_{k-2} \times 1} \rightarrow \mathbb{F}^{n_{k-3} \times 1} \\
   &\vdots \\
-  &f^{-1}_{1} : \mathbb{F}^{n_2} \rightarrow \mathbb{F}^{n_1}
+  &f^{-1}_{1} : \mathbb{F}^{n_2 \times 1} \rightarrow \mathbb{F}^{n_1 \times 1}
 \end{aligned}
 $$
 
