@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "Tu Chapter 5 Exercise 5"
+date:   2026-11-18 13:00:00 -0500
+categories: Manifolds Topology
+math: true
+---
+
+## Overview
+
+This is Problem 5.5 in Tu's Manifolds book. It asks to prove this proposition.
+
+**Proposition 5.18 (An atlas for a product manifold).** *If $\{(U_\alpha, \phi_\alpha)\}$ and $\{(V_i, \psi_i)\}$ are $C^\infty$ atlases for the manifolds $M$ and $N$ of dimensions $m$ and $n$, respectively, then the collection*
+
+$$\{(U_\alpha \times V_i,\ \phi_\alpha \times \psi_i : U_\alpha \times V_i \to \mathbb{R}^m \times \mathbb{R}^n)\}$$
+
+*of charts is a $C^\infty$ atlas on $M \times N$. Therefore, $M \times N$ is a $C^\infty$ manifold of dimension $m + n$.*
+
+## Proof
+
+It suffices to prove the statement, $$\{(U_\alpha, \phi_\alpha)\}$$ and $$\{(V_i, \psi_i)\}$$ are $$C^\infty$$ atlases for the manifolds $M$ and $N$ of dimensions $m$ and $n$, respectively, then the collection
+
+$$\{(U_\alpha \times V_i,\ \phi_\alpha \times \psi_i : U_\alpha \times V_i \to \mathbb{R}^m \times \mathbb{R}^n)\} = \mathfrak{A}$$
+
+of charts is a $C^\infty$ atlas on $M \times N$.
+
+As a roadmap, it suffices to show each $$\phi_\alpha \times \psi_i$$ are homeomorphisms and pairwise $$C^\infty$$ compatible. Also, it must be shown that $$M \times N$$ has a cover of open sets found in $$\mathfrak{A}$$.
+
+### Homeomorphism Proof
+
+To show each $$\phi_\alpha \times \psi_i$$ is a homeomorphism, it suffices to show $$\phi_\alpha \times \psi_i$$ is injective, surjective, and continuous.
+
+To prove injectivity, suppose $$p_1, p_2 \in U_\alpha$$ and $$q_1, q_2 \in V_i$$. Because $$\phi_\alpha$$ and $$\psi_i$$ are individually injective, we know if $$p_1 \ne p_2$$, then $$\phi_\alpha(p_1) \ne \phi_\alpha(p_2)$$, and if $$q_1 \ne q_2$$, then $$\psi_i(q_1) \ne \psi_i(q_2)$$. Next, observe
+
+$$
+\begin{aligned}
+    (\phi_\alpha \times \psi_i)(p_1, q_1) &= (\phi_\alpha(p_1), \psi_i(q_1)) \\
+    (\phi_\alpha \times \psi_i)(p_1, q_2) &= (\phi_\alpha(p_1), \psi_i(q_2)) \\
+    (\phi_\alpha \times \psi_i)(p_2, q_1) &= (\phi_\alpha(p_2), \psi_i(q_1)) \\
+    (\phi_\alpha \times \psi_i)(p_2, q_2) &= (\phi_\alpha(p_2), \psi_i(q_2))
+\end{aligned}
+$$
+
+Because $$\phi_\alpha$$ and $$\psi_i$$ are injective, none of the four cases above are equal, showing $$\phi_\alpha \times \psi_i$$ is injective.
+
+To show surjectivity, suppose $$(x, y) \in \phi_\alpha(U_\alpha) \times \psi_i(V_i)$$. Because $$\phi_\alpha$$ and $$\psi_i$$ are homeomorphisms, there exists $$p \in U_\alpha$$ and $$q \in V_i$$ such that $$\phi_\alpha(p) = x$$ and $$\psi_i(q) = y$$. Thus, $$(\phi_\alpha \times \psi_i)(p, q) = (x, y)$$, showing $$\phi_\alpha \times \psi_i$$ is surjective.
+
+With $$\phi_\alpha \times \psi_i$$ being injective and surjective, it is bijective.
+
+To show $$\phi_\alpha \times \psi_i$$ is continuous, it suffices to show for each open subset $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$, the set $$(\phi_\alpha \times \psi_i)^{-1}(D, E)$$ is open in $$U_\alpha \times V_i$$.
+
+Suppose $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$ is open. Because $$\phi_\alpha$$ and $$\psi_i$$ are homeomorphisms, observe that $$\phi_\alpha^{-1}(D)$$ is open in $$U_\alpha$$ and $$\psi_i^{-1}(E)$$ is open in $$V_i$$. Next, we may build a basis element, namely $$(\phi_\alpha^{-1}(D), \psi_i^{-1}(E))$$, for $$U_\alpha \times V_i$$. Because basis elements are open, the element $$(\phi_\alpha^{-1}(D), \psi_i^{-1}(E)) = (\phi_\alpha \times \psi_i)^{-1}(D \times E)$$ and is open in $$U_\alpha \times V_i$$. This proves $$\phi_\alpha \times \psi_i$$ is continuous. 
+
+It remains to show $$(\phi_\alpha \times \psi_i)^{-1}$$ is continuous. Because $$\phi_\alpha \times \psi_i$$ is a bijection, we know an inverse function $$(\phi_\alpha \times \psi_i)^{-1}$$ exists. It suffices to show for each open subset $$G
+
+Because 
+
+## Extras
+
+link to the mathjax LaTeX specification: [https://treeofmath.github.io/tex-commands-in-mathjax/TeXSyntax.htm](https://treeofmath.github.io/tex-commands-in-mathjax/TeXSyntax.htm)
