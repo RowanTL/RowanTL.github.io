@@ -47,13 +47,38 @@ To show surjectivity, suppose $$(x, y) \in \phi_\alpha(U_\alpha) \times \psi_i(V
 
 With $$\phi_\alpha \times \psi_i$$ being injective and surjective, it is bijective.
 
-To show $$\phi_\alpha \times \psi_i$$ is continuous, it suffices to show for each open subset $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$, the set $$(\phi_\alpha \times \psi_i)^{-1}(D, E)$$ is open in $$U_\alpha \times V_i$$.
+To show $$\phi_\alpha \times \psi_i$$ is continuous, it suffices to show for each open subset $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$, the preimage $$(\phi_\alpha \times \psi_i)^{-1}(D \times E)$$ is open in $$U_\alpha \times V_i$$.
 
-Suppose $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$ is open. Because $$\phi_\alpha$$ and $$\psi_i$$ are homeomorphisms, observe that $$\phi_\alpha^{-1}(D)$$ is open in $$U_\alpha$$ and $$\psi_i^{-1}(E)$$ is open in $$V_i$$. Next, we may build a basis element, namely $$(\phi_\alpha^{-1}(D), \psi_i^{-1}(E))$$, for $$U_\alpha \times V_i$$. Because basis elements are open, the element $$(\phi_\alpha^{-1}(D), \psi_i^{-1}(E)) = (\phi_\alpha \times \psi_i)^{-1}(D \times E)$$ and is open in $$U_\alpha \times V_i$$. This proves $$\phi_\alpha \times \psi_i$$ is continuous. 
+Suppose $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$ is open. Because $$\phi_\alpha$$ and $$\psi_i$$ are continuous, observe that $$\phi_\alpha^{-1}(D)$$ is open in $$U_\alpha$$ and $$\psi_i^{-1}(E)$$ is open in $$V_i$$. Next, we may build a basis element, namely $$(\phi_\alpha^{-1}(D), \psi_i^{-1}(E))$$, in $$U_\alpha \times V_i$$. Because basis elements are open, the element $$(\phi_\alpha^{-1}(D), \psi_i^{-1}(E)) = (\phi_\alpha \times \psi_i)^{-1}(D \times E)$$ and is open in $$U_\alpha \times V_i$$. This proves $$\phi_\alpha \times \psi_i$$ is continuous. 
 
-It remains to show $$(\phi_\alpha \times \psi_i)^{-1}$$ is continuous. Because $$\phi_\alpha \times \psi_i$$ is a bijection, we know an inverse function $$(\phi_\alpha \times \psi_i)^{-1}$$ exists. It suffices to show for each open subset $$G
+It remains to show $$(\phi_\alpha \times \psi_i)^{-1} : \mathbb{R}^m \times \mathbb{R}^n \rightarrow U_\alpha \times V_i$$ is continuous. Because $$\phi_\alpha \times \psi_i$$ is a bijection, we know an inverse function $$(\phi_\alpha \times \psi_i)^{-1}$$ exists. It suffices to show for each open subset $$G \times H \subset U_\alpha \times V_i$$, the set $$(\phi_\alpha \times \psi_i)(G \times H)$$ is open in $$\mathbb{R}^m \times \mathbb{R}^n$$.
 
-Because 
+Suppose $$G \times H \subset U_\alpha \times V_i$$ is open. Because $$\phi_\alpha^{-1}$$ and $$\psi_i^{-1}$$ are continuous, observe that $$\phi_\alpha(G)$$ is open in $$\mathbb{R}^m$$ and $$\psi_i(H)$$ is open in $$\mathbb{R}^n$$. Next, build a basis element, specifically $$(\phi_\alpha(G), \psi_i(H)) \subset \mathbb{R}^m \times \mathbb{R}^n$$. Since basis elements are open, the element $$(\phi_\alpha(G), \psi_i(H)) = (\phi_\alpha \times \psi_i)(G \times H)$$ and is open in $$\mathbb{R}^m \times \mathbb{R}^n$$, proving $$(\phi_\alpha \times \psi_i)^{-1}$$ is continuous.
+
+This concludes the section in proving $$\phi_\alpha \times \psi_i$$ is a homeomorphism.
+
+### $$U_\alpha \times V_I$$ Covering
+
+Because $$\{(U_\alpha \times V_i)\}$$ forms a basis for $$M \times N$$, the union of all $$U_\alpha \times V_i$$ forms a covering of\
+$$M \times N$$.
+
+### Pairwise $$C^\infty$$-compatible charts of $$M \times N$$
+
+To demonstrate pairwise compatibility of all charts in $$M \times N$$, suppose $$(U_1 \times V_1, \phi_1 \times \psi_1), (U_2 \times V_2, \phi_2 \times \psi_2) \in \mathfrak{A}$$. It suffices to show
+
+$$
+    (\phi_1 \times \psi_1) \circ (\phi_2 \times \psi_2)^{-1} : (\phi_2 \times \psi_2)(U_1 \times V_1 \cap U_2 \times V_2) \rightarrow (\phi_1 \times \psi_1)(U_1 \times V_1 \cap U_2 \times V_2)
+$$
+
+and
+
+$$
+    (\phi_2 \times \psi_2) \circ (\phi_1 \times \psi_1)^{-1} : (\phi_1 \times \psi_1)(U_1 \times V_1 \cap U_2 \times V_2) \rightarrow (\phi_2 \times \psi_2)(U_1 \times V_1 \cap U_2 \times V_2)
+$$
+
+are $$C^\infty$$. Note if $$U_1 \times V_1 \cap U_2 \times V_2 = \emptyset$$, then the functions above are automatically $$C^\infty$$.
+
+When the sets have elements in common
 
 ## Extras
 
