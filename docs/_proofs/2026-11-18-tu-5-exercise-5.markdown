@@ -16,6 +16,12 @@ $$\{(U_\alpha \times V_i,\ \phi_\alpha \times \psi_i : U_\alpha \times V_i \to \
 
 *of charts is a $C^\infty$ atlas on $M \times N$. Therefore, $M \times N$ is a $C^\infty$ manifold of dimension $m + n$.*
 
+Furthermore as stated in example 5.17 for some sets $$X$$, $$X'$$, $$Y$$, and $$Y'$$, maps $$f: X \to X'$$ and $$g: Y \to Y'$$, and $$x \in X$$ and $$y \in Y$$ define
+
+$$
+f \times g : X \times Y \to X' \times Y', \quad (f \times g)(x, y) = (f(x), g(y)) \,.
+$$
+
 ## Proof
 
 It suffices to prove the statement, $$\{(U_\alpha, \phi_\alpha)\}$$ and $$\{(V_i, \psi_i)\}$$ are $$C^\infty$$ atlases for the manifolds $M$ and $N$ of dimensions $m$ and $n$, respectively, then the collection
@@ -24,47 +30,48 @@ $$\{(U_\alpha \times V_i,\ \phi_\alpha \times \psi_i : U_\alpha \times V_i \to \
 
 of charts is a $C^\infty$ atlas on $M \times N$.
 
-As a roadmap, it suffices to show each $$\phi_\alpha \times \psi_i$$ are homeomorphisms and pairwise $$C^\infty$$ compatible. Also, it must be shown that $$M \times N$$ has a cover of open sets found in $$\mathfrak{A}$$.
+As a roadmap, it suffices to show the charts in $$\mathfrak{A}$$ are homeomorphisms and pairwise $$C^\infty$$ compatible. Also, it must be shown that $$M \times N$$ has a cover of open sets found in $$\mathfrak{A}$$.
 
 ### Homeomorphism Proof
 
-To show each $$\phi_\alpha \times \psi_i$$ is a homeomorphism, it suffices to show $$\phi_\alpha \times \psi_i$$ is injective, surjective, and continuous.
+To show the charts in $$\mathfrak{A}$$ are homeomorphic, it suffices to show $$\phi \times \psi \in \{(\phi_\alpha \times \psi_i)\}$$ is injective, surjective, and continuous. We also need to show $$(\phi \times \psi)^{-1}$$ exists and is continuous.
 
-To prove injectivity, suppose $$p_1, p_2 \in U_\alpha$$ and $$q_1, q_2 \in V_i$$. Because $$\phi_\alpha$$ and $$\psi_i$$ are individually injective, we know if $$p_1 \ne p_2$$, then $$\phi_\alpha(p_1) \ne \phi_\alpha(p_2)$$, and if $$q_1 \ne q_2$$, then $$\psi_i(q_1) \ne \psi_i(q_2)$$. Next, observe
+To prove injectivity, suppose $$p_1, p_2 \in U_\alpha$$ and $$q_1, q_2 \in V_i$$. Because $$\phi$$ and $$\psi$$ are individually injective, we know if $$p_1 \ne p_2$$, then $$\phi(p_1) \ne \phi(p_2)$$, and if $$q_1 \ne q_2$$, then $$\psi(q_1) \ne \psi(q_2)$$. Next, observe
 
 $$
 \begin{aligned}
-    (\phi_\alpha \times \psi_i)(p_1, q_1) &= (\phi_\alpha(p_1), \psi_i(q_1)) \\
-    (\phi_\alpha \times \psi_i)(p_1, q_2) &= (\phi_\alpha(p_1), \psi_i(q_2)) \\
-    (\phi_\alpha \times \psi_i)(p_2, q_1) &= (\phi_\alpha(p_2), \psi_i(q_1)) \\
-    (\phi_\alpha \times \psi_i)(p_2, q_2) &= (\phi_\alpha(p_2), \psi_i(q_2))
+    (\phi \times \psi)(p_1, q_1) &= (\phi(p_1), \psi(q_1)) \\
+    (\phi \times \psi)(p_1, q_2) &= (\phi(p_1), \psi(q_2)) \\
+    (\phi \times \psi)(p_2, q_1) &= (\phi(p_2), \psi(q_1)) \\
+    (\phi \times \psi)(p_2, q_2) &= (\phi(p_2), \psi(q_2))
 \end{aligned}
 $$
 
-Because $$\phi_\alpha$$ and $$\psi_i$$ are injective, none of the four cases above are equal, showing $$\phi_\alpha \times \psi_i$$ is injective.
+Because $$\phi$$ and $$\psi$$ are injective, none of the four cases above are equal, showing $$\phi \times \psi$$ is injective.
 
-To show surjectivity, suppose $$(x, y) \in \phi_\alpha(U_\alpha) \times \psi_i(V_i)$$. Because $$\phi_\alpha$$ and $$\psi_i$$ are homeomorphisms, there exists $$p \in U_\alpha$$ and $$q \in V_i$$ such that $$\phi_\alpha(p) = x$$ and $$\psi_i(q) = y$$. Thus, $$(\phi_\alpha \times \psi_i)(p, q) = (x, y)$$, showing $$\phi_\alpha \times \psi_i$$ is surjective.
+To show surjectivity, suppose $$(x, y) \in \phi(U_\alpha) \times \psi(V_i)$$. Because $$\phi$$ and $$\psi$$ are homeomorphisms, there exists $$p \in U_\alpha$$ and $$q \in V_i$$ such that $$\phi(p) = x$$ and $$\psi(q) = y$$. Thus, $$(\phi \times \psi)(p, q) = (x, y)$$, showing $$\phi \times \psi$$ is surjective.
 
-With $$\phi_\alpha \times \psi_i$$ being injective and surjective, it is bijective.
+With $$\phi \times \psi$$ being injective and surjective, it is bijective.
 
-To show $$\phi_\alpha \times \psi_i$$ is continuous, it suffices to show for each open subset $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$, the preimage $$(\phi_\alpha \times \psi_i)^{-1}(D \times E)$$ is open in $$U_\alpha \times V_i$$.
+To show $$\phi \times \psi$$ is continuous, it suffices to show for each open subset $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$, the preimage $$(\phi \times \psi)^{-1}(D \times E)$$ is open in $$U_\alpha \times V_i$$.
 
-Suppose $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$ is open. Because $$\phi_\alpha$$ and $$\psi_i$$ are continuous, observe that $$\phi_\alpha^{-1}(D)$$ is open in $$U_\alpha$$ and $$\psi_i^{-1}(E)$$ is open in $$V_i$$. Next, we may build a basis element, namely $$(\phi_\alpha^{-1}(D), \psi_i^{-1}(E))$$, in $$U_\alpha \times V_i$$. Because basis elements are open, the element $$(\phi_\alpha^{-1}(D), \psi_i^{-1}(E)) = (\phi_\alpha \times \psi_i)^{-1}(D \times E)$$ and is open in $$U_\alpha \times V_i$$. This proves $$\phi_\alpha \times \psi_i$$ is continuous. 
+Suppose $$D \times E \subset \mathbb{R}^m \times \mathbb{R}^n$$ is open. Because $$\phi$$ and $$\psi$$ are continuous, observe that $$\phi^{-1}(D)$$ is open in $$U_\alpha$$ and $$\psi^{-1}(E)$$ is open in $$V_i$$. Next, we may build a basis element, namely\
+$$\phi^{-1}(D) \times \psi^{-1}(E)$$, in $$U_\alpha \times V_i$$. Because basis elements are open, the element $$\phi^{-1}(D) \times \psi^{-1}(E) = (\phi \times \psi)^{-1}(D \times E)$$ and is open in $$U_\alpha \times V_i$$. This proves $$\phi \times \psi$$ is continuous. 
 
-It remains to show $$(\phi_\alpha \times \psi_i)^{-1} : \mathbb{R}^m \times \mathbb{R}^n \rightarrow U_\alpha \times V_i$$ is continuous. Because $$\phi_\alpha \times \psi_i$$ is a bijection, we know an inverse function $$(\phi_\alpha \times \psi_i)^{-1}$$ exists. It suffices to show for each open subset $$G \times H \subset U_\alpha \times V_i$$, the set $$(\phi_\alpha \times \psi_i)(G \times H)$$ is open in $$\mathbb{R}^m \times \mathbb{R}^n$$.
+It remains to show $$(\phi \times \psi)^{-1} : \mathbb{R}^m \times \mathbb{R}^n \rightarrow U_\alpha \times V_i$$ is continuous. Because $$\phi \times \psi$$ is a bijection, we know an inverse function $$(\phi \times \psi)^{-1}$$ exists. It suffices to show for each open subset $$G \times H \subset U_\alpha \times V_i$$, the set $$(\phi \times \psi)(G \times H)$$ is open in $$\mathbb{R}^m \times \mathbb{R}^n$$.
 
-Suppose $$G \times H \subset U_\alpha \times V_i$$ is open. Because $$\phi_\alpha^{-1}$$ and $$\psi_i^{-1}$$ are continuous, observe that $$\phi_\alpha(G)$$ is open in $$\mathbb{R}^m$$ and $$\psi_i(H)$$ is open in $$\mathbb{R}^n$$. Next, build a basis element, specifically $$(\phi_\alpha(G), \psi_i(H)) \subset \mathbb{R}^m \times \mathbb{R}^n$$. Since basis elements are open, the element $$(\phi_\alpha(G), \psi_i(H)) = (\phi_\alpha \times \psi_i)(G \times H)$$ and is open in $$\mathbb{R}^m \times \mathbb{R}^n$$, proving $$(\phi_\alpha \times \psi_i)^{-1}$$ is continuous.
+Suppose $$G \times H \subset U_\alpha \times V_i$$ is open. Because $$\phi^{-1}$$ and $$\psi^{-1}$$ are continuous, observe that $$\phi(G)$$ is open in $$\mathbb{R}^m$$ and $$\psi(H)$$ is open in $$\mathbb{R}^n$$. Next, build a basis element, specifically $$\phi(G) \times \psi(H) \subset \mathbb{R}^m \times \mathbb{R}^n$$. Since basis elements are open, the element $$\phi(G) \times \psi(H) = (\phi \times \psi)(G \times H)$$ and is open in $$\mathbb{R}^m \times \mathbb{R}^n$$, proving $$(\phi \times \psi)^{-1}$$ is continuous.
 
-This concludes the section in proving $$\phi_\alpha \times \psi_i$$ is a homeomorphism.
+This concludes the section in proving $$\phi \times \psi$$ is a homeomorphism.
 
-### $$U_\alpha \times V_I$$ Covering
+### $$U_\alpha \times V_i$$ Covering
 
 Because $$\{(U_\alpha \times V_i)\}$$ forms a basis for $$M \times N$$, the union of all $$U_\alpha \times V_i$$ forms a covering of\
 $$M \times N$$.
 
 ### Pairwise $$C^\infty$$-compatible charts of $$M \times N$$
 
-To demonstrate pairwise compatibility of all charts in $$M \times N$$, suppose $$(U_1 \times V_1, \phi_1 \times \psi_1), (U_2 \times V_2, \phi_2 \times \psi_2) \in \mathfrak{A}$$. It suffices to show
+To demonstrate pairwise $$C^\infty$$-compatibility of all charts in $$M \times N$$, suppose $$(U_1 \times V_1, \phi_1 \times \psi_1), (U_2 \times V_2, \phi_2 \times \psi_2) \in \mathfrak{A}$$. It suffices to show
 
 $$
     (\phi_1 \times \psi_1) \circ (\phi_2 \times \psi_2)^{-1} : (\phi_2 \times \psi_2)(U_1 \times V_1 \cap U_2 \times V_2) \rightarrow (\phi_1 \times \psi_1)(U_1 \times V_1 \cap U_2 \times V_2)
@@ -78,7 +85,55 @@ $$
 
 are $$C^\infty$$. Note if $$U_1 \times V_1 \cap U_2 \times V_2 = \emptyset$$, then the functions above are automatically $$C^\infty$$.
 
-When the sets have elements in common
+It remains to prove the case $$U_1 \times V_1 \cap U_2 \times V_2 \ne \emptyset$$.
+
+Looking at
+
+$$
+    (\phi_1 \times \psi_1) \circ (\phi_2 \times \psi_2)^{-1} : (\phi_2 \times \psi_2)(U_1 \times V_1 \cap U_2 \times V_2) \rightarrow (\phi_1 \times \psi_1)(U_1 \times V_1 \cap U_2 \times V_2)
+$$
+
+observe for $$(p_\phi, q_\psi) \in (\phi_2 \times \psi_2)(U_1 \times V_1 \cap U_2 \times V_2)$$,
+
+$$
+    (\phi_2 \circ \psi_2)^{-1}(p_\phi, q_\psi) = (\phi_2^{-1}(p_\phi), \psi_2^{-1}(q_\psi))
+$$
+
+Treating this as a vector with two elements, we may use the vector-valued function rule defined in definition 1.1 (In the middle of the main paragraph). Because the component functions, $$\phi^{-1}_2$$ and $$\psi^{-1}_2$$, are $$C^\infty$$, the function $$(\phi_2 \times \psi_2)^{-1}$$ is $$C^\infty$$.
+
+Next, looking at the function $$\phi_1 \times \psi_1$$, we may use the same logic to see this as a vector valued function.
+Given $$(p, q) \in U_1 \times V_1 \cap U_2 \times V_2$$,
+
+$$
+    (\phi_1 \times \psi_1)(p, q) = (\phi_1(p), \psi_1(q))
+$$
+
+Because $$\phi_1$$ and $$\psi_1$$ are $$C^\infty$$, the function $$(\phi_1 \times \psi_1)$$ is $$C^\infty$$.
+
+Finally, because the composition of two $$C^\infty$$ functions are $$C^\infty$$, the function $$(\phi_1 \times \psi_1) \circ (\phi_2 \times \psi_2)^{-1}$$ is $$C^\infty$$.
+
+A similar process may applied to the second composition in the original statement. The proof of that is almost identical and is subsequently left to the reader.
+
+### Showing Dimension
+
+Let
+
+$$
+    h: \mathbb{R}^m \times \mathbb{R}^n \to \mathbb{R}^{m + n}
+$$
+
+and $$(x_1, x_2, \cdots, x_m) \in \mathbb{R}^m$$, $$(y_1, y_2, \cdots, y_n) \in \mathbb{R}^n$$
+
+$$
+    h((x_1, x_2, \cdots, x_m), (y_1, y_2, \cdots, y_n)) = (x_1, x_2, \cdots, x_m, y_1, y_2, \cdots, y_n) \,.
+$$
+
+This is clearly a bijection, and the dimension of this vector is $$m+n$$. This bijection may be applied to every vector
+in $$\mathbb{R}^m \times \mathbb{R}^n$$, showing its dimension is $$m+n$$.
+
+### Conclusion
+
+After showing the charts in $$\mathfrak{A}$$ are homeomorphic and pairwise $$C^\infty$$-compatible along with showing a covering of $$M \times N$$ exists, an atlas exists for the product manifold $$M \times N$$. We have also shown the dimension of $$M \times N$$ is $$m+n$$.
 
 ## Extras
 
